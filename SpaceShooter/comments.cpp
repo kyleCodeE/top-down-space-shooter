@@ -19,9 +19,10 @@
         Overload a constructor
         // Player.h line 26
         // Player.cpp line 68
+        // I see now that I misread this and provided an overloaded operator. OOP[s]
 
         Utilize an initialization list
-        // Best ex. in Entity.h
+        // Best ex. in Entity.
         // All .h files
 
 
@@ -32,11 +33,19 @@
 
 3.  Correctly reason about control flow in a program using dynamic dispatch.
 
-4.  Explain the relationship between object-oriented inheritance (code-sharing and overriding) and subtyping (the idea of a subtype being usable in a context that expects the supertype).
+4.  Explain the relationship between object-oriented inheritance (code-sharing and overriding) and 
+    subtyping (the idea of a subtype being usable in a context that expects the supertype).
+
+        // Object-oriented inheritance includes the idea that a subclass contains everything 
+        // that its superclass does, because it is a version of that superclass. For example, 
+        // one of my planned functions would be deleting entities that collide. The function 
+        // parameters would ask for an Entity object, but would work with any of the current
+        // classes that I have, as they are all subclasses of Entity.
 
 6.  Use object-oriented encapsulation mechanisms such as interfaces and private members.
 
-7.  Define and use iterators and other operations on aggregates, including operations that take functions as arguments.
+7.  Define and use iterators and other operations on aggregates, including operations that take 
+    functions as arguments.
 
 8.  Follow best practices for style and readability
 
