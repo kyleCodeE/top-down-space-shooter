@@ -1,19 +1,23 @@
 #include "Enemy.h"
+#include <iostream>
 
 void Enemy::setSpeed(sf::Vector2f playerPos)
 {
-    int xDifference = getPosition().x - playerPos.x;
+    // calc vertical and horizontal distance between enemy and player
+    // Need xDiff as float, or to convert later to produce correct pathAngle
+    float xDifference = getPosition().x - playerPos.x; 
     int yDifference = getPosition().y - playerPos.y;
 
+    // calc angle of line for enemy to follow
     float pathAngle;
     if (yDifference != 0) {
         pathAngle = atan(xDifference / yDifference);
     }
     else pathAngle = M_PI;
 
+    // 
     float xSpeed;
     float ySpeed;
-
     xSpeed = enemyBaseSpeed * sin(pathAngle);
     ySpeed = enemyBaseSpeed * cos(pathAngle);
     if (xDifference == 0) xSpeed = 0;

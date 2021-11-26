@@ -78,18 +78,21 @@ int main()
 
 
             bulletCooldown = clock2.getElapsedTime();
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && bulletCooldown > bulletTime)
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) 
+                && bulletCooldown > bulletTime)
             {
                 // Grab the next bullet in array and shoot from player
                 currentBullet++;
                 if (currentBullet == 10) currentBullet = 0;
-                bullets[currentBullet].setSpeed(player.getXSpeed(), player.getYSpeed(), player.getRotation());
+                bullets[currentBullet].setSpeed(player.getXSpeed(), 
+                    player.getYSpeed(), player.getRotation());
                 bullets[currentBullet].setRotation(player.getRotation());
                 bullets[currentBullet].setPosition(player.getPosition());
                 clock2.restart();
             }
 
-            if (abs(firstEnemy.getPosition().x - bullets[currentBullet].getPosition().x) < 18 && abs(firstEnemy.getPosition().y - bullets[currentBullet].getPosition().y) < 20)
+            if (abs(firstEnemy.getPosition().x - bullets[currentBullet].getPosition().x) < 18 
+                && abs(firstEnemy.getPosition().y - bullets[currentBullet].getPosition().y) < 20)
             {
                 firstEnemy.die();
             }
@@ -121,7 +124,7 @@ int main()
     return 0;
 } //end main
 
-/*
+/* 
 void refreshEntities(Player player, Bullet bullets[10], Enemy firstEnemy, sf::Time bulletCooldown, sf::Clock clock2, int currentBullet)
 {
     player.setAcceleration();
