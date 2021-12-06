@@ -10,10 +10,10 @@ void Enemy::setSpeed(sf::Vector2f playerPos)
 
     // calc angle of line for enemy to follow
     float pathAngle;
-    if (yDifference != 0) {
+    if (yDifference != 0)
         pathAngle = atan(xDifference / yDifference);
-    }
-    else pathAngle = M_PI;
+    else if (yDifference == 0)
+        pathAngle = M_PI / (xDifference > 0 ? -2 : 2);
 
     // 
     float xSpeed;
